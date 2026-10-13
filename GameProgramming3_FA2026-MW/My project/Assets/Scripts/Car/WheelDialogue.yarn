@@ -1,0 +1,28 @@
+﻿
+title: WheelStart
+---
+<<checkWheels GameController>>
+
+<<if $carQuestStarted == true>>
+    <<jump WheelAfterCar>>
+<<else>>
+    <<jump WheelBeforeCar>>
+<<endif>>
+===
+
+title: WheelBeforeCar
+---
+Sagunn: Oh, a wheel.
+Sagunn: Wonder what I could use this for.
+Sagunn: Might as well take it.
+
+<<collectWheel>>
+===
+
+title: WheelAfterCar
+---
+Sagunn: Hey, this must be one of the missing wheels!
+Sagunn: I'll take it back to the car.
+
+<<collectWheel>>
+===

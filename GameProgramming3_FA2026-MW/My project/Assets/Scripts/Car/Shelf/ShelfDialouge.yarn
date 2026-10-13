@@ -1,0 +1,51 @@
+﻿
+title: ShelfStart
+---
+<<declare $shelfPhase = "">>
+<<setShelfPhase ShelfNPC>>
+
+<<if $shelfPhase == "start">>
+    <<jump ShelfAsk>>
+<<elseif $shelfPhase == "quest_complete_return">>
+    <<jump ShelfDone>>
+<<else>>
+    <<jump ShelfAsk>>
+<<endif>>
+===
+
+title: ShelfAsk
+---
+NPC: Hey there, can you help me with something?
+NPC: I've been trying to move this shelf.
+NPC: It's too heavy for me to move alone.
+NPC: Can you help me push it?
+
+-> Yes, I can help.
+    <<jump ShelfYes>>
+-> Maybe later.
+    <<jump ShelfLater>>
+===
+
+title: ShelfYes
+---
+Sagunn: Sure, let's move it.
+NPC: Alright, let's push!
+
+<<moveShelf ShelfNPC>>
+
+NPC: Nice! We finally moved it.
+NPC: Thanks for helping me.
+
+<<getShelfPhase ShelfNPC "quest_complete_return">>
+===
+
+title: ShelfLater
+---
+Sagunn: Not right now.
+NPC: Alright, come back when you're ready.
+===
+
+title: ShelfDone
+---
+NPC: Hey, thanks again for helping me move that shelf.
+===

@@ -1,0 +1,68 @@
+﻿
+title: CarStart
+---
+<<checkWheels GameController>>
+
+<<if $carQuestStarted == false>>
+    <<jump BrokenCar>>
+<<elseif $wheelsCollected < 4>>
+    <<jump FindWheels>>
+<<else>>
+    <<jump AllWheels>>
+<<endif>>
+===
+
+title: BrokenCar
+---
+Sagunn: Finally, a car.
+Sagunn: I need to get downtown.
+Sagunn: If this thing still works, I might actually get out of here!
+Sagunn: ...
+Sagunn: All four of the wheels are missing.
+Sagunn: How does someone even lose all four wheels?
+Sagunn: The rest of the car looks fine, at least.
+Sagunn: They have to be somewhere around this warehouse.
+Sagunn: Guess I'll have to look around to find out.
+
+<<startCarQuest GameController>>
+===
+
+title: FindWheels
+---
+Sagunn: Still missing some wheels.
+Sagunn: I should look around more.
+Sagunn: There are boxes and shelves everywhere.
+Sagunn: Someone could have left them in just about any corner of this place.
+
+<<if $wheelsCollected == 0>>
+    Sagunn: Haven't found a single one yet.
+    Sagunn: I should probably start checking behind those shelves.
+    Sagunn: They can't have just disappeared.
+<<elseif $wheelsCollected == 1>>
+    Sagunn: One down, three more to go.
+    Sagunn: At least I know there are wheels lying around here.
+    Sagunn: Hopefully the others aren't too far away.
+<<elseif $wheelsCollected == 2>>
+    Sagunn: Two wheels. Halfway there.
+    Sagunn: Just need to keep searching.
+<<elseif $wheelsCollected == 3>>
+    Sagunn: Just one more wheel.
+    Sagunn: Now where could it be...
+<<endif>>
+===
+
+title: AllWheels
+---
+Sagunn: That's all four wheels!
+Sagunn: Took me long enough to find them.
+Sagunn: Now I just need to put them back on the car.
+Sagunn: Hopefully the engine still works after all this time.
+
+-> Repair the car.
+    Sagunn: Alright, let's get these wheels back where they belong.
+    <<repairCar GameController>>
+    Sagunn: Looks like it's ready.
+    Sagunn: Not bad. I honestly didn't think I'd get this thing working.
+    Sagunn: Now I just need to hope there's enough gas in the tank.
+    Sagunn: Finally, I can get downtown.
+===
