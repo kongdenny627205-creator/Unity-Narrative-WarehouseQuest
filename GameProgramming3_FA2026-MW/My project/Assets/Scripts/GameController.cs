@@ -84,6 +84,12 @@ public class GameController : MonoBehaviour
             Debug.Log("Collect" + wheelID);
         }
     }
+
+
+
+
+
+
     [YarnCommand("checkWheels")]
     public void checkWheels()
     {
@@ -135,6 +141,10 @@ public class GameController : MonoBehaviour
             tpc.enabled = true;
         }
     }
+
+
+
+
 
     public void moveForDialog(Transform movePos)
     {

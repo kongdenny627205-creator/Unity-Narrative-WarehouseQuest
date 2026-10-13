@@ -34,20 +34,20 @@ public class Car_Interact : MonoBehaviour
         }
     }
 
+
     public void setText(string txt)
     {
         interactText.text = txt;
     }
 
+
     public void Update()
     {
         if (canInteract)
         {
-            if (Keyboard.current != null &&
-                Keyboard.current.eKey.wasPressedThisFrame)
+            if (Keyboard.current.eKey.wasPressedThisFrame)
             {
-                Debug.Log("Interacted the car");
-
+                Debug.Log("Interact Car");
                 setText("");
 
                 if (!dialogue.IsDialogueRunning)

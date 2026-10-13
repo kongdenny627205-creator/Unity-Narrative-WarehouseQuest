@@ -48,8 +48,7 @@ public class Wheel_Interact : MonoBehaviour
     {
         if (canInteract)
         {
-            if (Keyboard.current != null &&
-                Keyboard.current.eKey.wasPressedThisFrame)
+            if (Keyboard.current.eKey.wasPressedThisFrame)
             {
                 if (!dialogue.IsDialogueRunning)
                 {
@@ -57,7 +56,7 @@ public class Wheel_Interact : MonoBehaviour
 
                     setText("");
                     canInteract = false;
-                    Debug.Log("WHEEL");
+                    Debug.Log("wheelhere");
                     dialogue.StartDialogue("WheelStart");
                 }
             }

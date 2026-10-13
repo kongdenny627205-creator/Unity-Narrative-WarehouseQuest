@@ -13,6 +13,8 @@ public class ShelfNPC : MonoBehaviour
     public DialogueRunner dialogue;
     public NPC_Data npcData;
 
+
+
     public Transform shelf;
     public Transform shelfMoveLoc;
     public float moveSpeed = 2f;
@@ -50,8 +52,7 @@ public class ShelfNPC : MonoBehaviour
     {
         if (canInteract)
         {
-            if (Keyboard.current != null &&
-                Keyboard.current.eKey.wasPressedThisFrame)
+            if (Keyboard.current.eKey.wasPressedThisFrame)
             {
                 if (!dialogue.IsDialogueRunning)
                 {
