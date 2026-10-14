@@ -56,7 +56,7 @@ public class ShelfNPC : MonoBehaviour
             {
                 if (!dialogue.IsDialogueRunning)
                 {
-                    Debug.Log("Talked to Shelf NPC");
+                    Debug.Log("Talked to ShelfNPC");
 
                     setText("");
                     dialogue.StartDialogue(npcData.startingNode);
