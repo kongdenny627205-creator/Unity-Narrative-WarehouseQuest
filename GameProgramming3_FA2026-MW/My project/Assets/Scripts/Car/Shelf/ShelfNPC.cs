@@ -99,7 +99,7 @@ public class ShelfNPC : MonoBehaviour
     {
         if (phase == "quest_complete_return")
         {
-            npcData.currentPhase =
+            npcData.currentPhase = 
                 NPC_Data.dialogPhase.quest_complete_return;
         }
     }
